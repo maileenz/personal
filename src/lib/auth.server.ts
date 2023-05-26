@@ -19,7 +19,7 @@ export const requireAuth = async(req: RequestEventBase | RequestEventAction, red
     const authId = await getUserId(req)
 
     // need fix for server functions
-    if(!authId) throw req.redirect(302, redirect)
+    if(!authId) throw (req as any).redirect(302, redirect)
 
     return authId
 }
@@ -29,5 +29,5 @@ export const requireVisitor = async(req: RequestEventBase | RequestEventAction, 
     const authId = await getUserId(req)
 
     // need fix for server functions
-    if(authId) throw req.redirect(302, redirect)
+    if(authId) throw (req as any).redirect(302, redirect)
 }
