@@ -7,7 +7,7 @@ import {
   zod$,
 } from "@builder.io/qwik-city";
 import { prisma } from "~/lib/prisma.server";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import {
   Button,
   Checkbox,
